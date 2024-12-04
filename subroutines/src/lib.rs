@@ -5,6 +5,7 @@
 // along with the HyperPlonk library. If not, see <https://mit-license.org/>.
 
 #![allow(clippy::non_canonical_clone_impl)] // using `derivative`
+#![allow(dead_code)]
 
 pub mod pcs;
 pub mod poly_iop;

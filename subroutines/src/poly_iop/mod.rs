@@ -15,6 +15,7 @@ mod structs;
 mod sum_check;
 mod utils;
 mod zero_check;
+mod zk_sum_check;
 
 #[derive(Clone, Debug, Default, Copy, PartialEq, Eq)]
 /// Struct for PolyIOP protocol.
