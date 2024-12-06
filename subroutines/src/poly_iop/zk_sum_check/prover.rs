@@ -1,7 +1,7 @@
 use super::ZkSumCheckProver;
 use crate::poly_iop::{
     errors::PolyIOPErrors,
-    structs::{IOPProverMessage, IOPProverState},
+    structs::{IOPProverMessage, IOPProverState, RandomMaskPolynomial},
 };
 use arithmetic::{fix_variables, VirtualPolynomial};
 use ark_ff::{batch_inversion, PrimeField};
@@ -13,15 +13,6 @@ use std::sync::Arc;
 
 #[cfg(feature = "parallel")]
 use rayon::iter::{IntoParallelRefMutIterator, ParallelIterator};
-
-#[derive(Clone, Debug, Default, PartialEq)]
-pub struct RandomMaskPolynomial<F: PrimeField> {
-    // Constant term of random mask polynomial
-    pub const_term: F,
-    // For each uni-polynomial g_i, `evaluations[i][j]` is g_i(j),
-    // j\in \{0, 1, \cdots, d\}
-    pub evaluations: Vec<Vec<F>>
-}
 
 impl<F: PrimeField> RandomMaskPolynomial<F> {
     pub fn rand<R: RngCore>(

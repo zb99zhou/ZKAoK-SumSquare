@@ -7,9 +7,11 @@ use arithmetic::{VPAuxInfo, VirtualPolynomial};
 use ark_ff::PrimeField;
 use ark_poly::DenseMultilinearExtension;
 use ark_std::{end_timer, start_timer};
-use prover::{RandomMaskPolynomial, ZkSumCheckProverState};
+use prover::ZkSumCheckProverState;
 use std::{fmt::Debug, sync::Arc};
 use transcript::IOPTranscript;
+
+use super::structs::RandomMaskPolynomial;
 
 mod prover;
 mod verifier;

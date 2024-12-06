@@ -52,3 +52,12 @@ pub struct IOPVerifierState<F: PrimeField> {
     /// a list storing the randomness sampled by the verifier at each round
     pub(crate) challenges: Vec<F>,
 }
+
+#[derive(Clone, Debug, Default, PartialEq)]
+pub struct RandomMaskPolynomial<F: PrimeField> {
+    // Constant term of random mask polynomial
+    pub const_term: F,
+    // For each uni-polynomial g_i, `evaluations[i][j]` is g_i(j),
+    // j\in \{0, 1, \cdots, d\}
+    pub evaluations: Vec<Vec<F>>
+}
