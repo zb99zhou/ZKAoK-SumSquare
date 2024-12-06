@@ -9,5 +9,5 @@
 pub use crate::poly_iop::{
     errors::PolyIOPErrors, perm_check::PermutationCheck, prod_check::ProductCheck,
     structs::IOPProof, sum_check::SumCheck, utils::*, zero_check::ZeroCheck, PolyIOP,
-    zk_sum_check::ZkSumCheck
+    zk_sum_check::ZkSumCheck, structs::RandomMaskPolynomial
 };
